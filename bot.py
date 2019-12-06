@@ -14,7 +14,7 @@ def start(message):
 
 
 def mane():
-    print('Функция mane() нчачала работу...')
+    print('Функция mane() начала работу...')
     for game in parcer.NewGames():
         if parcer.check_the_entry(game):
             bot.send_message(509585214, 'Доступно новое предложение: \n %s \n'
