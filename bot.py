@@ -3,7 +3,7 @@ import parcer
 import schedule
 import time
 
-bot = telebot.TeleBot('your telegram bot token')
+bot = telebot.TeleBot('1035544822:AAEsqmCrzyQzXyh6yKGb7KTsTQXX_ICh7z4')
 
 
 @bot.message_handler(content_types=['text'])
@@ -16,7 +16,7 @@ def start(message):
 def mane():
     for game in parcer.NewGames():
         if parcer.check_the_entry(game):
-            bot.send_message('your user_id', 'Доступно новое предложение: \n %s \n'
+            bot.send_message(509585214, 'Доступно новое предложение: \n %s \n'
                                         '\n От: %s \n\n Цена: %s руб' % (game.link_, game.seller, game.price))
 
 
