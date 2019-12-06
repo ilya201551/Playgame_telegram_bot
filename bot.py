@@ -20,10 +20,10 @@ def mane():
                                         '\n От: %s \n\n Цена: %s руб' % (game.link_, game.seller, game.price))
 
 
-schedule.every(3).seconds.do(mane)
+schedule.every(3).minutes.do(mane)
 while True:
     schedule.run_pending()
     time.sleep(1)
-# bot.polling(none_stop=True, interval=0)
+
 
 
