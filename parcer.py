@@ -26,7 +26,8 @@ class NewGames:
         titles.append(product.find_all('a')[1].text)
         prices.append(int(product.find('div', attrs={'class': 'price'}).text))
         links.append('https://playgame.by/' + product.find_all('a')[1]['href'])
-        sellers.append(product.find_all('a')[2].text)
+        sellers.append(product.find_all('a')[2].text[2:])
+    
 
     def __init__(self):
         self.games = [Game(title, price, link_, seller)
