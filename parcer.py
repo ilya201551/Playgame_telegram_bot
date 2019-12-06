@@ -59,6 +59,6 @@ outdated_proposals = []
 def check_the_entry(game):
     if game.title in creating_suitable_prices()\
             and game.price <= creating_suitable_prices()[game.title]\
-            and game.seller not in outdated_proposals:
-        outdated_proposals.append(game.seller)
+            and (game.seller + game.title) not in outdated_proposals:
+        outdated_proposals.append(game.seller + game.title)
         return True
