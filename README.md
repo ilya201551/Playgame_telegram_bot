@@ -20,9 +20,9 @@
   The bot using the schedule module runs every three minutes. In the course of work, he
 collects information about new offers on the site (name, seller and price). The bot
 compares the learned data with the data downloaded from Google sheets in the form of
-json. 
+json: 
 
-def creating_suitable_prices():
+'def creating_suitable_prices():
     session = requests.Session()
     request = session.get('https://spreadsheets.google.com/feeds/list' +
                           '/1Lscd6K7wVHbD5kUHBhXnecxCayknR8sIFy-dtS2Wny4/od6/public/values?alt=json',
@@ -32,7 +32,7 @@ def creating_suitable_prices():
     titles = [table_json['feed']['entry'][title]['gsx$games']['$t'] for title in range(table_len)]
     prices = [int(table_json['feed']['entry'][price]['gsx$prices']['$t']) for price in range(table_len)]
     suitable_prices = {title: price for title, price in zip(titles, prices)}
-    return suitable_prices
+    return suitable_prices'
 
 If the price of the new offer corresponds to the price indicated in the Google
 sheet, then the bot will send a notification in the form of a telegram message.
