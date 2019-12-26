@@ -20,21 +20,15 @@
   The bot using the schedule module runs every three minutes. In the course of work, he
 collects information about new offers on the site (name, seller and price). The bot
 compares the learned data with the data downloaded from Google sheets in the form of
-json: 
-'''
-  def creating_suitable_prices():
-      session = requests.Session()
-      request = session.get('https://spreadsheets.google.com/feeds/list' +
-                            '/1Lscd6K7wVHbD5kUHBhXnecxCayknR8sIFy-dtS2Wny4/od6/public/values?alt=json',
-                            headers=NewGames.HEADERS)
-      table_json = request.json()
-      table_len = len(table_json['feed']['entry'])
-      titles = [table_json['feed']['entry'][title]['gsx$games']['$t'] for title in range(table_len)]
-      prices = [int(table_json['feed']['entry'][price]['gsx$prices']['$t']) for price in range(table_len)]
-      suitable_prices = {title: price for title, price in zip(titles, prices)}
-      return suitable_prices
-'''
-If the price of the new offer corresponds to the price indicated in the Google
-sheet, then the bot will send a notification in the form of a telegram message.
+json.
+
+  Function *creating_suitable_prices()* parses google sheet and returns dict consisting
+  of game names and prices:
+  
+    '{title: price for title, price in zip(titles, prices)}'
+    
+  If the price of the new offer corresponds to the price indicated in the Google
+sheet, then function *check_the_entry(game)* sends a signal to the bot, after that programm
+will send a notification in the form of a telegram message.
  
  
