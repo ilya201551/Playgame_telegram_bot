@@ -34,4 +34,4 @@ will send a notification in the form of a telegram message.
   Suitable suggestions are put on the ignore list(*outdated_proposals()*)
   to prevent re-sending the notification.
  
- 
+  The bot is hosted on Heroku free hosting.
