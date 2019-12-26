@@ -17,12 +17,12 @@
 
 # DETAILS:
 
-  The bot using the schedule module runs every three minutes. In the course of work, he
+  The bot using the *schedule module*runs every three minutes. In the course of work, he
 collects information about new offers on the site (name, seller and price). The bot
 compares the learned data with the data downloaded from Google sheets in the form of
 json.
 
-  Function *creating_suitable_prices()* parses google sheet and returns dict consisting
+  Function *creating_suitable_prices()* parses Google sheet and returns dict consisting
   of game names and prices:
   
     '{title: price for title, price in zip(titles, prices)}'
@@ -30,5 +30,8 @@ json.
   If the price of the new offer corresponds to the price indicated in the Google
 sheet, then function *check_the_entry(game)* sends a signal to the bot, after that programm
 will send a notification in the form of a telegram message.
+
+  Suitable suggestions are put on the ignore list(*outdated_proposals()*)
+  to prevent re-sending the notification.
  
  
