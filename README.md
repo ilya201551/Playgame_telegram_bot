@@ -35,3 +35,5 @@ will send a notification in the form of a telegram message.
   to prevent re-sending the notification.
  
   The bot is hosted on Heroku free hosting.
+
+Comparison table: https://docs.google.com/spreadsheets/d/1Lscd6K7wVHbD5kUHBhXnecxCayknR8sIFy-dtS2Wny4/edit?usp=sharing
